@@ -27,15 +27,10 @@ timestamp=$(date -u +'%Y-%m-%d %H:%M:%S')
 
 #Declare password env var for psql container
 export PGPASSWORD=$psql_password
-echo $memory_free
-echo $cpu_idle
-echo $cpu_kernel
-echo $disk_io
-echo $disk_available
 
 # Subquery to find matching id in host_info table
 host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";
-#
+
 ##Construct command and execute it
 insert_stmt="INSERT INTO host_usage(timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available)
 VALUES('$timestamp', $host_id, '$memory_free', '$cpu_idle', '$cpu_kernel', '$disk_io', '$disk_available')"
