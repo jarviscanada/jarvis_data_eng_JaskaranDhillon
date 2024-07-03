@@ -62,7 +62,7 @@ All fields are required.
 
 | timestamp | host_id | memory_free | cpu_idle | cpu_kernel | disk_io | disk_available 
 |-----------|---------|-------------|----------|------------|---------|----------------|
-| 019-05-29 17:49:53.000   | 1       | 256         | 95       | 0          | 31220   | 256
+| 019-05-29 17:49:53.000   | 1       | 256         | 95       | 0          | 31220   | 256|
 
 - `timestamp`: Timestamp at the time the data is collected.
 - `host_id`: Id of the machine on which the data is being collected on. A foreign key, relating to the host_info table.
