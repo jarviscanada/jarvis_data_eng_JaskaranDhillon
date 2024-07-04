@@ -30,16 +30,16 @@ skills:
     - Docker
     - MongoDB
     - Python
-    - fermentum
-    - fermentum
+    - Frementum
+    - PostgreSQL
 
 # List of Jarvis projects
 jarvis_projects:
-  - name: "Cluster Monitor"
+  - name: "Linux Cluster Monitor"
     git_url: "/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+    description: Developed a Linux monitoring agent which collects server hardware and resource usage metrics periodically. A quick and easy to use tool built using Bash, Docker, and PostgreSQL. Provides valuable information for cluster performance assessment and future resource allocation planning.
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:

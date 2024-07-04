@@ -8,14 +8,14 @@ A recent Computer Engineering graduate from McMaster University with a passion f
 
 **Competent:** Linux/Bash, Spring Boot, TypeScript, Linux, Jest, Git
 
-**Familiar:** Docker, MongoDB, Python, fermentum, fermentum
+**Familiar:** Docker, MongoDB, Python, Frementum, PostgreSQL
 
 ## Jarvis Projects
 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Linux Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/linux_sql)]: Developed a Linux monitoring agent which collects server hardware and resource usage metrics periodically. A quick and easy to use tool built using Bash, Docker, and PostgreSQL. Provides valuable information for cluster performance assessment and future resource allocation planning.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/core_java)]:
       
