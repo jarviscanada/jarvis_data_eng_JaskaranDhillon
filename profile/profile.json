@@ -11,14 +11,14 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon",
   "highlighted_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
-      "name": "Web app for resturant"
+      "description": "Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script using Prompt Engineering and OpenAI which provides summaries, definitions, and practice questions based on the provided input content. Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL.",
+      "git_url": "https://github.com/Jaskaran-Dhillon/StudyAI-Client",
+      "name": "StudyAI"
     },
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": null,
-      "name": "Machine Learning"
+      "description": "Developed a live chat application integrated with the Azure Translator API to allow users to communicate with each other, irrespective of their language. Designed an elegant and responsive user interface in React using Material-UI. Wrote unit tests for the front-end using Jest and React Testing Library. Built microservices using Express.js, PostgreSQL, and WebSockets to handle user authentication and communication.",
+      "git_url": "https://github.com/Jaskaran-Dhillon/CommonTongue-Front-End",
+      "name": "CommonTongue"
     }
   ],
   "jarvis_projects": [
@@ -66,19 +66,8 @@
   "others": [
     {
       "bullets": [
-        "Udacity Machine Learning (2019)"
-      ],
-      "title": "Certificates"
-    },
-    {
-      "bullets": [
-        "Winner"
-      ],
-      "title": "Awards"
-    },
-    {
-      "bullets": [
-        "Soccer player"
+        "Interested in 3D animations as a hobby, developing small projects in my free time.",
+        "Hackathon enthusiast, participated in HTN 2021, Hack The 6IX 2023, and UOttaHack 4."
       ],
       "title": "Activities/Hobbies"
     }
@@ -92,13 +81,13 @@
     },
     {
       "company": "Canada Life",
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque",
+      "description": "Designed and implemented new microservices using Spring Boot, MongoDB, and Kafka to serve as reference implementations for new developers. Enhanced the Azure Search OpenAI application using React, Python, and Flask to improve functionality and integrate it into Canada Life services. Developed multiple Spring Boot applications demonstrating Kafka error handling patterns to standardize designs across multiple teams.",
       "duration": "May 2023 - August 2023",
       "title": "Software Engineer Intern"
     },
     {
       "company": "Sera4",
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque",
+      "description": "Architected and implemented a new user portal in React and TypeScript, used by 10,000+ enterprise users. Developed internal tools aimed at optimizing team workflows, resulting in efficiency gains of up to 30%. Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library. Extended existing RESTful API microservices with new features using Express.js and PostgreSQL.",
       "duration": "May 2021 - August 2022",
       "title": "Software Engineer Intern"
     }
@@ -116,7 +105,7 @@
       "Docker",
       "MongoDB",
       "Python",
-      "Frementum",
+      "Kafka",
       "PostgreSQL"
     ],
     "proficient": [

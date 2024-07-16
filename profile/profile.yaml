@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: A recent Computer Engineering graduate from McMaster University with a passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships using technologies such as React, TypeScript, Spring Boot, and PostgreSQL. Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.
+summary: "A recent Computer Engineering graduate from McMaster University with a passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships using technologies such as React, TypeScript, Spring Boot, and PostgreSQL. Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge."
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
 skills:
@@ -30,7 +30,7 @@ skills:
     - Docker
     - MongoDB
     - Python
-    - Frementum
+    - Kafka
     - PostgreSQL
 
 # List of Jarvis projects
@@ -66,14 +66,16 @@ jarvis_projects:
 # Feel free to add more projects
 highlighted_projects:
     #project name
-  - name: "Web app for resturant"
+  - name: "StudyAI"
     #URL is optional
-    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    git_url: "https://github.com/Jaskaran-Dhillon/StudyAI-Client"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-  - name: "Machine Learning"
-    git_url:
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+    description: "Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script using Prompt Engineering and OpenAI which provides summaries, definitions, and practice questions based on the provided input content.
+    Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL."
+  - name: "CommonTongue"
+    git_url: "https://github.com/Jaskaran-Dhillon/CommonTongue-Front-End"
+    description: "Developed a live chat application integrated with the Azure Translator API to allow users to communicate with each other, irrespective of their language. Designed an elegant and responsive user interface in React using Material-UI. Wrote unit tests for the front-end using Jest and React Testing Library. 
+    Built microservices using Express.js, PostgreSQL, and WebSockets to handle user authentication and communication."
 
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
@@ -88,11 +90,16 @@ professional_experience:
   - title: "Software Engineer Intern"
     company: "Canada Life"
     duration: "May 2023 - August 2023"
-    description: "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque"
+    description: "Designed and implemented new microservices using Spring Boot, MongoDB, and Kafka to serve as reference implementations for new developers.
+    Enhanced the Azure Search OpenAI application using React, Python, and Flask to improve functionality and integrate it into Canada Life services.
+    Developed multiple Spring Boot applications demonstrating Kafka error handling patterns to standardize designs across multiple teams."
   - title: "Software Engineer Intern"
     company: "Sera4"
     duration: "May 2021 - August 2022"
-    description: "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque"
+    description: "Architected and implemented a new user portal in React and TypeScript, used by 10,000+ enterprise users.
+    Developed internal tools aimed at optimizing team workflows, resulting in efficiency gains of up to 30%.
+    Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library.
+    Extended existing RESTful API microservices with new features using Express.js and PostgreSQL."
 
 #List of edcuation
 education: 
@@ -113,16 +120,16 @@ education:
 
 #Optional section
 others:
-    #category
-  - title: "Certificates"
-    #list of items
-    bullets:
-      - "Udacity Machine Learning (2019)"
-  - title: "Awards"
-    bullets:
-      - "Winner"
+#    #category
+#  - title: "Certificates"
+#    #list of items
+#    bullets:
+#      - "Udacity Machine Learning (2019)"
+#  - title: "Awards"
+#    bullets:
+#      - "Winner"
   - title: "Activities/Hobbies"
     bullets:
-      - "Soccer player"
-#      - "Competitive gaming"
+      - "Interested in 3D animations as a hobby, developing small projects in my free time."
+      - "Hackathon enthusiast, participated in HTN 2021, Hack The 6IX 2023, and UOttaHack 4."
 #      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"

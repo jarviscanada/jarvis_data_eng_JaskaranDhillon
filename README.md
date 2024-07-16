@@ -8,7 +8,7 @@ A recent Computer Engineering graduate from McMaster University with a passion f
 
 **Competent:** Linux/Bash, Spring Boot, TypeScript, Linux, Jest, Git
 
-**Familiar:** Docker, MongoDB, Python, Frementum, PostgreSQL
+**Familiar:** Docker, MongoDB, Python, Kafka, PostgreSQL
 
 ## Jarvis Projects
 
@@ -35,18 +35,18 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**StudyAI** [[GitHub](https://github.com/Jaskaran-Dhillon/StudyAI-Client)]: Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script using Prompt Engineering and OpenAI which provides summaries, definitions, and practice questions based on the provided input content. Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL.
 
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**CommonTongue** [[GitHub](https://github.com/Jaskaran-Dhillon/CommonTongue-Front-End)]: Developed a live chat application integrated with the Azure Translator API to allow users to communicate with each other, irrespective of their language. Designed an elegant and responsive user interface in React using Material-UI. Wrote unit tests for the front-end using Jest and React Testing Library. Built microservices using Express.js, PostgreSQL, and WebSockets to handle user authentication and communication.
 
 
 ## Professional Experiences
 
 **Software Developer, Jarvis (June 2024-present)**: Developing applications using Sprint Boot, Java, Linux, Docker.
 
-**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque
+**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Designed and implemented new microservices using Spring Boot, MongoDB, and Kafka to serve as reference implementations for new developers. Enhanced the Azure Search OpenAI application using React, Python, and Flask to improve functionality and integrate it into Canada Life services. Developed multiple Spring Boot applications demonstrating Kafka error handling patterns to standardize designs across multiple teams.
 
-**Software Engineer Intern, Sera4 (May 2021 - August 2022)**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque
+**Software Engineer Intern, Sera4 (May 2021 - August 2022)**: Architected and implemented a new user portal in React and TypeScript, used by 10,000+ enterprise users. Developed internal tools aimed at optimizing team workflows, resulting in efficiency gains of up to 30%. Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library. Extended existing RESTful API microservices with new features using Express.js and PostgreSQL.
 
 
 ## Education
@@ -54,6 +54,5 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 
 
 ## Miscellaneous
-- Udacity Machine Learning (2019)
-- Winner
-- Soccer player
+- Interested in 3D animations as a hobby, developing small projects in my free time.
+- Hackathon enthusiast, participated in HTN 2021, Hack The 6IX 2023, and UOttaHack 4.
