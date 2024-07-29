@@ -21,8 +21,6 @@ public interface JavaGrep {
   /**
    * Read a file and return all the lines
    *
-   * Explain filereader, bufferedReader, and character encoding
-   *
    * @param inputFile file to be read
    * @return string lines from the inputFile
    * @throws IllegalArgumentException if a given inputFile is not a file

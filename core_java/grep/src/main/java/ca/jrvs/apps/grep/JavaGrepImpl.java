@@ -1,7 +1,6 @@
 package ca.jrvs.apps.grep;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.BasicConfigurator;
@@ -18,7 +17,7 @@ public class JavaGrepImpl implements JavaGrep {
   private String rootPath;
   private String outFile;
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     if (args.length != 3) {
       throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
     }
