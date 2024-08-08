@@ -1,48 +1,36 @@
 # Jaskaran Dhillon . Jarvis Consulting
 
-A recent Computer Engineering graduate from McMaster University with a passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships using technologies such as React, TypeScript, Spring Boot, and PostgreSQL. Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.
+A recent Computer Engineering graduate from McMaster University with a passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships. I have worked on high-impact projects such as architecting and developing a user portal for Sera4 to help companies manage their assets, using technologies such as React, TypeScript, ExpressJS, and PostgreSQL. I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience. Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.
 
 ## Skills
 
 **Proficient:** Java, JavaScript, HTML/CSS, React, ExpressJS, Agile/Scrum
 
-**Competent:** Linux/Bash, Spring Boot, TypeScript, Linux, Jest, Git
+**Competent:** Linux, Spring Boot, TypeScript, Jest, Git, Docker, PostgreSQL
 
-**Familiar:** Docker, MongoDB, Python, Kafka, PostgreSQL
+**Familiar:** Figma, MongoDB, Python, Kafka, CI/CD
 
 ## Jarvis Projects
 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon)
 
 
-**Linux Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/linux_sql)]: Developed a Linux monitoring agent which collects server hardware and resource usage metrics periodically. A quick and easy to use tool built using Bash, Docker, and PostgreSQL. Provides valuable information for cluster performance assessment and future resource allocation planning.
+**Linux Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/linux_sql)]: The Linux Cluster Monitoring Agent (LCM) is a set of bash scripts that provide the functionality to monitor and log resource usage of every node in a cluster. The agent collects hardware information on every node and also collects data on CPU, memory, and disk usage for every node every minute. The data is stored in a PostgreSQL database provisioned using Docker. The LCM is an invaluable tool which provides Linux cluster usage data which can be accessed by an LCA team to assess system performance and plan for future resource allocation.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/core_java)]:
       
   - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
   - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/springboot)]: Not Started
-
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/python_data_anlytics)]: Not Started
-
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/hadoop)]: Not Started
-
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/spark)]: Not Started
-
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/cloud_devops)]: Not Started
+  - Grep App: A Java implementation of the Linux grep command. It accepts a regex pattern, directory path, an out file path, and recursively searches through all files in the given directory to find all lines that match the given regex pattern. The lines are stored in the out file specified.
 
 
 ## Highlighted Projects
-**StudyAI** [[GitHub](https://github.com/Jaskaran-Dhillon/StudyAI-Client)]: Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script using Prompt Engineering and OpenAI which provides summaries, definitions, and practice questions based on the provided input content. Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL.
+**StudyAI** [[GitHub](https://github.com/Jaskaran-Dhillon/StudyAI-Client)]: Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script which utilizes Prompt Engineering and OpenAI to provide summaries, definitions, and practice questions based on the provided input content. Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL.
 
 **CommonTongue** [[GitHub](https://github.com/Jaskaran-Dhillon/CommonTongue-Front-End)]: Developed a live chat application integrated with the Azure Translator API to allow users to communicate with each other, irrespective of their language. Designed an elegant and responsive user interface in React using Material-UI. Wrote unit tests for the front-end using Jest and React Testing Library. Built microservices using Express.js, PostgreSQL, and WebSockets to handle user authentication and communication.
 
 
 ## Professional Experiences
-
-**Software Developer, Jarvis (June 2024-present)**: Developing applications using Sprint Boot, Java, Linux, Docker.
 
 **Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Designed and implemented new microservices using Spring Boot, MongoDB, and Kafka to serve as reference implementations for new developers. Enhanced the Azure Search OpenAI application using React, Python, and Flask to improve functionality and integrate it into Canada Life services. Developed multiple Spring Boot applications demonstrating Kafka error handling patterns to standardize designs across multiple teams.
 
