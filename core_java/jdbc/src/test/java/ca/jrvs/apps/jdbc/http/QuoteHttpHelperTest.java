@@ -1,8 +1,9 @@
-package ca.jrvs.apps.jdbc;
+package ca.jrvs.apps.jdbc.http;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+import ca.jrvs.apps.jdbc.dto.Quote;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -17,15 +18,18 @@ public class QuoteHttpHelperTest {
   @Mock
   private HttpClient httpClient;
 
+
   @Mock
   private HttpResponse<String> httpResponse;
 
-  @InjectMocks
   private QuoteHttpHelper quoteHttpHelper;
+  private String apiKey = "test";
 
   @Before
   public void setUp() {
+
     MockitoAnnotations.initMocks(this);
+    quoteHttpHelper = new QuoteHttpHelper(apiKey, httpClient);
   }
 
   @Test

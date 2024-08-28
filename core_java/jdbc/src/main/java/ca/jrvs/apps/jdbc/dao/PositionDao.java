@@ -1,5 +1,6 @@
-package ca.jrvs.apps.jdbc;
+package ca.jrvs.apps.jdbc.dao;
 
+import ca.jrvs.apps.jdbc.dto.Position;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,8 +12,10 @@ import java.util.List;
 public class PositionDao implements CrudDao<Position, String> {
 
   private Connection connection;
-  private static final String save =
-      "INSERT INTO position (symbol, number_of_shares, value_paid) VALUES (?, ?, ?)";
+  private static final String insert =
+      "INSERT INTO position (number_of_shares, value_paid, symbol) VALUES (?, ?, ?)";
+  private static final String update =
+      "UPDATE position SET number_of_shares = ?, value_paid = ? WHERE symbol = ?";
   private static final String findById = "SELECT * FROM position WHERE symbol = ?";
   private static final String findAll = "SELECT * FROM position";
   private static final String deleteAll = "DELETE FROM position";
@@ -28,10 +31,19 @@ public class PositionDao implements CrudDao<Position, String> {
       throw new IllegalArgumentException("Position must not be null.");
     }
 
-    try (PreparedStatement ps = connection.prepareStatement(save)) {
-      ps.setString(1, position.getTicker());
-      ps.setInt(2, position.getNumOfShares());
-      ps.setDouble(3, position.getValuePaid());
+    Optional<Position> existingPosition = findById(position.getTicker());
+
+    String query;
+    if (existingPosition.isPresent()) {
+      query = update;
+    } else {
+      query = insert;
+    }
+
+    try (PreparedStatement ps = connection.prepareStatement(query)) {
+      ps.setInt(1, position.getNumOfShares());
+      ps.setDouble(2, position.getValuePaid());
+      ps.setString(3, position.getTicker());
 
       ps.executeUpdate();
     } catch (SQLException e) {

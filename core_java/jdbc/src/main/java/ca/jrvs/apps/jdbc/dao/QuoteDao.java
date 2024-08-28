@@ -1,5 +1,6 @@
-package ca.jrvs.apps.jdbc;
+package ca.jrvs.apps.jdbc.dao;
 
+import ca.jrvs.apps.jdbc.dto.Quote;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,9 +12,12 @@ import java.util.List;
 public class QuoteDao implements CrudDao<Quote, String> {
 
   private Connection connection;
-  private static final String save =
-      "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, "
-          + "change_percent, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  private static final String insert =
+      "INSERT INTO quote (open, high, low, price, volume, latest_trading_day, previous_close, change, "
+          + "change_percent, timestamp, symbol) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  private static final String update =
+      "UPDATE quote SET open = ?, high = ?, low = ?, price = ?, volume = ?, latest_trading_day = ?, "
+          + "previous_close = ?, change = ?, change_percent = ?, timestamp = ? WHERE symbol = ?";
   private static final String findById = "SELECT * FROM quote WHERE symbol = ?";
   private static final String findAll = "SELECT * FROM quote";
   private static final String deleteAll = "DELETE FROM quote";
@@ -29,18 +33,28 @@ public class QuoteDao implements CrudDao<Quote, String> {
       throw new IllegalArgumentException("Quote must not be null.");
     }
 
-    try (PreparedStatement ps = connection.prepareStatement(save)) {
-      ps.setString(1, quote.getTicker());
-      ps.setDouble(2, quote.getOpen());
-      ps.setDouble(3, quote.getHigh());
-      ps.setDouble(4, quote.getLow());
-      ps.setDouble(5, quote.getPrice());
-      ps.setInt(6, quote.getVolume());
-      ps.setDate(7, new java.sql.Date(quote.getLatestTradingDay().getTime())); //converting from java.util.date to java.sql.date
-      ps.setDouble(8, quote.getPreviousClose());
-      ps.setDouble(9, quote.getChange());
-      ps.setString(10, quote.getChangePercent());
-      ps.setTimestamp(11, quote.getTimestamp());
+    Optional<Quote> existingQuote = findById(quote.getTicker());
+
+    String query;
+    if (existingQuote.isPresent()) {
+      query = update;
+    } else {
+      query = insert;
+    }
+
+    try (PreparedStatement ps = connection.prepareStatement(query)) {
+      ps.setDouble(1, quote.getOpen());
+      ps.setDouble(2, quote.getHigh());
+      ps.setDouble(3, quote.getLow());
+      ps.setDouble(4, quote.getPrice());
+      ps.setInt(5, quote.getVolume());
+      ps.setDate(6, new java.sql.Date(quote.getLatestTradingDay()
+          .getTime())); // converting from java.util.Date to java.sql.Date
+      ps.setDouble(7, quote.getPreviousClose());
+      ps.setDouble(8, quote.getChange());
+      ps.setString(9, quote.getChangePercent());
+      ps.setTimestamp(10, quote.getTimestamp());
+      ps.setString(11, quote.getTicker());
 
       ps.executeUpdate();
     } catch (SQLException e) {
@@ -79,7 +93,6 @@ public class QuoteDao implements CrudDao<Quote, String> {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      throw new RuntimeException("Failed to retrieve quote with symbol = " + symbol, e);
     }
 
     return Optional.empty();

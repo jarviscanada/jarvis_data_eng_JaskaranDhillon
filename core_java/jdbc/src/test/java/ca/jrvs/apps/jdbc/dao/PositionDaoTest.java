@@ -1,8 +1,10 @@
-package ca.jrvs.apps.jdbc;
+package ca.jrvs.apps.jdbc.dao;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import ca.jrvs.apps.jdbc.dto.Position;
+import ca.jrvs.apps.jdbc.dto.Quote;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

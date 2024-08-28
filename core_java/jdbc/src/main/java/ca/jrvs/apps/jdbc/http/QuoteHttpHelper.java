@@ -1,5 +1,6 @@
-package ca.jrvs.apps.jdbc;
+package ca.jrvs.apps.jdbc.http;
 
+import ca.jrvs.apps.jdbc.dto.Quote;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -10,14 +11,16 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.sql.Timestamp;
+import okhttp3.OkHttpClient;
 
 public class QuoteHttpHelper {
 
-  private String apiKey = "22640d375fmsh51d8b22af25d346p19d5cdjsnd2fc2a5460ae";
+  private String apiKey;
   private HttpClient httpClient;
 
-  public QuoteHttpHelper(HttpClient httpClient) {
+  public QuoteHttpHelper(String apiKey, HttpClient httpClient) {
     this.httpClient = httpClient;
+    this.apiKey = apiKey;
   }
 
   /**
@@ -32,12 +35,13 @@ public class QuoteHttpHelper {
         .uri(URI.create(
             "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol
                 + "&datatype=json"))
-        .header("X-RapidAPI-Key", "22640d375fmsh51d8b22af25d346p19d5cdjsnd2fc2a5460ae")
+        .header("X-RapidAPI-Key", apiKey)
         .header("X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com")
         .method("GET", HttpRequest.BodyPublishers.noBody())
         .build();
     try {
-      HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+      HttpResponse<String> response = httpClient.send(request,
+          HttpResponse.BodyHandlers.ofString());
 
       ObjectMapper objectMapper = new ObjectMapper();
       JsonNode rootNode = objectMapper.readTree(response.body());
