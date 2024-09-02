@@ -8,9 +8,11 @@ import java.sql.ResultSet;
 import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuoteDao implements CrudDao<Quote, String> {
-
+  private static final Logger logger = LoggerFactory.getLogger(QuoteDao.class);
   private Connection connection;
   private static final String insert =
       "INSERT INTO quote (open, high, low, price, volume, latest_trading_day, previous_close, change, "
@@ -30,9 +32,10 @@ public class QuoteDao implements CrudDao<Quote, String> {
   @Override
   public Quote save(Quote quote) throws IllegalArgumentException {
     if (quote == null) {
+      logger.error("Attempted to save null quote");
       throw new IllegalArgumentException("Quote must not be null.");
     }
-
+    logger.info("Saving quote: {}", quote.toString());
     Optional<Quote> existingQuote = findById(quote.getTicker());
 
     String query;
@@ -57,8 +60,10 @@ public class QuoteDao implements CrudDao<Quote, String> {
       ps.setString(11, quote.getTicker());
 
       ps.executeUpdate();
+      logger.info("Quote saved successfully");
     } catch (SQLException e) {
-      e.printStackTrace();
+      logger.info("Failed to save quote");
+      logger.error("Failed to save quote: {}", quote, e);
       throw new RuntimeException("Failed to save quote", e);
     }
     return null;
@@ -67,9 +72,11 @@ public class QuoteDao implements CrudDao<Quote, String> {
   @Override
   public Optional<Quote> findById(String symbol) throws IllegalArgumentException {
     if (symbol == null) {
+      logger.error("Attempted to find quote with null symbol");
       throw new IllegalArgumentException("Symbol must not be null.");
     }
 
+    logger.info("Looking for quote with symbol = {}", symbol);
     try (PreparedStatement ps = connection.prepareStatement(findById)) {
       ps.setString(1, symbol);
       ResultSet rs = ps.executeQuery();
@@ -88,11 +95,13 @@ public class QuoteDao implements CrudDao<Quote, String> {
         quote.setChange(rs.getDouble("change"));
         quote.setChangePercent(rs.getString("change_percent"));
         quote.setTimestamp(rs.getTimestamp("timestamp"));
-
+        logger.info("Found quote, returning: {}", quote.toString());
         return Optional.of(quote);
       }
     } catch (SQLException e) {
-      e.printStackTrace();
+      logger.info("Failed to retrieve quote");
+      logger.error("Failed to retrieve quote with symbol = {}", symbol, e);
+      throw new RuntimeException("Failed to retrieve quote with symbol = "+ symbol, e);
     }
 
     return Optional.empty();
@@ -101,7 +110,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
   @Override
   public Iterable<Quote> findAll() {
     List<Quote> quotes = new ArrayList<>();
-
+    logger.info("Fetching all quotes...");
     try (PreparedStatement ps = connection.prepareStatement(findAll);
         ResultSet rs = ps.executeQuery()) {
 
@@ -123,33 +132,38 @@ public class QuoteDao implements CrudDao<Quote, String> {
         quotes.add(quote);
       }
     } catch (SQLException e) {
-      e.printStackTrace();
+      logger.error("Failed to fetch all quotes...", e);
       throw new RuntimeException("Failed to retrieve all quotes.", e);
     }
+
+    logger.info("Found {} quotes", quotes.size());
     return quotes;
   }
 
   @Override
   public void deleteById(String symbol) throws IllegalArgumentException {
     if (symbol == null) {
+      logger.error("Attempted to delete quote with null symbol");
       throw new IllegalArgumentException("Symbol must not be null.");
     }
-
+    logger.info("Attempting to delete quote with symbol = {}", symbol);
     try (PreparedStatement ps = connection.prepareStatement(deleteById)) {
       ps.setString(1, symbol);
       ps.executeUpdate();
+      logger.info("Successfully deleted");
     } catch (SQLException e) {
-      e.printStackTrace();
+      logger.error("Failed to fetch all quotes...", e);
       throw new RuntimeException("Failed to delete quote with symbol = " + symbol, e);
     }
   }
 
   @Override
   public void deleteAll() {
+    logger.info("Attempting to delete all quotes");
     try (PreparedStatement ps = connection.prepareStatement(deleteAll)) {
       ps.executeUpdate();
     } catch (SQLException e) {
-      e.printStackTrace();
+      logger.error("Failed to delete all quotes.", e);
       throw new RuntimeException("Failed to delete all quotes.", e);
     }
   }

@@ -5,9 +5,11 @@ import ca.jrvs.apps.jdbc.dto.Quote;
 import ca.jrvs.apps.jdbc.dao.PositionDao;
 import ca.jrvs.apps.jdbc.dao.QuoteDao;
 import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PositionService {
-
+  private static final Logger logger = LoggerFactory.getLogger(PositionDao.class);
   private PositionDao positionDao;
   private QuoteDao quoteDao;
 
@@ -26,17 +28,21 @@ public class PositionService {
    */
   public Position buy(String ticker, int numberOfShares, double price) {
     if (ticker == null || ticker.trim().length() == 0 || numberOfShares <= 0 || price <= 0) {
+      logger.error("Attempting to buy share with invalid symbol, number of shares, or price provided.");
       throw new IllegalArgumentException("Invalid symbol, number of shares, or price provided.");
     }
 
+    logger.error("Attempting to purchase {} shares of {} at ${]", numberOfShares, ticker, price);
     Optional<Quote> foundQuote = quoteDao.findById(ticker);
 
     if (!foundQuote.isPresent()) {
+      logger.error("Symbol data not found.");
       throw new IllegalArgumentException("Symbol data not found.");
     }
 
     Quote quote = foundQuote.get();
     if (numberOfShares > quote.getVolume()) {
+      logger.error("Insufficient volume available for purchase.");
       throw new IllegalArgumentException("Insufficient volume available for purchase.");
     }
 
@@ -54,7 +60,7 @@ public class PositionService {
     }
 
     positionDao.save(position);
-
+    logger.info("Returning position {} ", position.toString());
     return position;
   }
 
@@ -64,6 +70,7 @@ public class PositionService {
    * @param ticker
    */
   public void sell(String ticker) {
+    logger.info("Attempting to sell all shares of {}", ticker);
     positionDao.deleteById(ticker);
   }
 
@@ -76,12 +83,14 @@ public class PositionService {
   public double calculateProfit(String ticker) {
 
     if (ticker == null || ticker.trim().length() == 0) {
+      logger.error("Attempted to calculate profit of invalid symbol");
       throw new IllegalArgumentException("Invalid symbol provided.");
     }
-
+    logger.info("Attempting to calculate profits of {}", ticker);
     Optional<Quote> optionalQuote = quoteDao.findById(ticker);
 
     if (!optionalQuote.isPresent()) {
+      logger.error("No quote found for given symbol");
       throw new IllegalArgumentException("No quote found for given symbol: " + ticker);
     }
 
@@ -89,8 +98,9 @@ public class PositionService {
     Optional<Position> optionalPosition = positionDao.findById(ticker);
 
     if (!optionalPosition.isPresent()) {
+      logger.error("No shares owned of the given symbol");
       throw new IllegalArgumentException(
-          "You don't own any stocks for the given symbol: " + ticker + "!");
+          "You don't own any shares for the given symbol: " + ticker + "!");
     }
 
     Position position = optionalPosition.get();
@@ -98,6 +108,7 @@ public class PositionService {
     double averagePrice = position.getValuePaid() / position.getNumOfShares();
     double currentPrice = quote.getPrice();
 
+    logger.info("Returning profits calculated");
     return (currentPrice - averagePrice) * position.getNumOfShares();
   }
 }

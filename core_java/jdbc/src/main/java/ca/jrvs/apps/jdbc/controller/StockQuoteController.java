@@ -1,14 +1,17 @@
 package ca.jrvs.apps.jdbc.controller;
 
+import ca.jrvs.apps.jdbc.dao.PositionDao;
 import ca.jrvs.apps.jdbc.dto.Quote;
 import ca.jrvs.apps.jdbc.dto.Position;
 import ca.jrvs.apps.jdbc.service.PositionService;
 import ca.jrvs.apps.jdbc.service.QuoteService;
 import java.util.Optional;
 import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class StockQuoteController {
-
+  private static final Logger logger = LoggerFactory.getLogger(PositionDao.class);
   private PositionService positionService;
   private QuoteService quoteService;
 
@@ -19,13 +22,14 @@ public class StockQuoteController {
 
   public void initClient() {
     Scanner scanner = new Scanner(System.in);
-
+    logger.info("Application started...");
     while (true) {
       try {
         System.out.println(
             "Enter the symbol you're interested in, or type exit to stop the application: ");
         String symbol = scanner.nextLine().trim().toUpperCase();
         if (symbol.equals("EXIT")) {
+          logger.info("Application exited.");
           break;
         }
         Optional<Quote> quoteFound = quoteService.fetchQuoteDataFromAPI(symbol);
@@ -74,12 +78,12 @@ public class StockQuoteController {
                 break;
             }
           } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("Something went wrong...", e);
             System.out.println("Something went wrong, please try again...");
           }
         }
       } catch (Exception e) {
-        e.printStackTrace();
+        logger.error("Something went wrong...", e);
         System.out.println("Something went wrong, please try again...");
       }
     }
