@@ -1,9 +1,19 @@
 package ca.jrvs.apps.trading.model;
 
-public class Account {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="account")
+public class Account {
+    @Id
+    @Column(name="id")
     int id;
+    @Column(name="trader_id")
     int traderId;
+    @Column(name="amount")
     double amount;
 
     public int getId() {
