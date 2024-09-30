@@ -77,8 +77,10 @@ highlighted_projects:
     #URL is optional
     git_url: "https://github.com/Jaskaran-Dhillon/StudyAI-Client"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Led a capstone team in the development of an application designed to streamline note-taking processes, allowing users to input lecture notes and audio files, resulting in the generation of a comprehensive PDF summary. Developed a Python script which utilizes Prompt Engineering and OpenAI to provide summaries, definitions, and practice questions based on the provided input content.
-    Designed the back-end API in MVC design pattern using Node.js, Express.js and PostgreSQL."
+    description: "Led a capstone team in the development of an application designed to streamline note-taking processes, allowing
+    students to generate comprehensive PDF summaries of lecture notes and audio recordings. Developed a Python script which utilizes Prompt Engineering and OpenAI to provide summaries, definitions,
+    and practice questions based on input content."
+
   - name: "CommonTongue"
     git_url: "https://github.com/Jaskaran-Dhillon/CommonTongue-Front-End"
     description: "Developed a live chat application integrated with the Azure Translator API to allow users to communicate with each other, irrespective of their language. Designed an elegant and responsive user interface in React using Material-UI. Wrote unit tests for the front-end using Jest and React Testing Library. 
@@ -116,9 +118,10 @@ Developed Spring Boot APIs demonstrating Kafka error handling patterns to standa
   - title: "Software Engineer Intern"
     company: "Sera4"
     duration: "May 2021 - August 2022"
-    description: "Developed Teleporte, a digital access control solution, using React and TypeScript to implement major features
-and significantly enhance the user experience for 10,000+ enterprise users.
-    Built internal tools aimed at optimizing team workflows, resulting in efficiency gains of up to 30%.
+    description: "Developed Teleporte, a digital access control portal for smart locks, using React and TypeScript to implement
+    major features and significantly enhance the user experience for 10,000+ enterprise users.
+    Revamped internal tools for the support team by developing wizards to consolidate systems for managing customer
+    organizations, assets, and licenses, streamlining processes and reducing task completion time by up to 30%.
     Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library.
     Designed and presented Figma UI mockups to stakeholders, ensuring design alignment and minimizing revisions.
     Extended existing RESTful API microservices with new features using Express.js and PostgreSQL."
