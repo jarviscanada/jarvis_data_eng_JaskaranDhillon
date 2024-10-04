@@ -3,7 +3,7 @@ package ca.jrvs.apps.trading.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class EODQuote {
+public class EODQuoteRequestDTO {
     private String ticker;
     @JsonProperty("close")
     private float lastPrice;
@@ -13,7 +13,7 @@ public class EODQuote {
     private int bidSize;
     @JsonProperty("high")
     private float askPrice;
-    @JsonProperty("volume")
+
     private int askSize;
 
     public String getTicker() {

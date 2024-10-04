@@ -1,6 +1,6 @@
 package ca.jrvs.apps.trading.dao;
 
-import ca.jrvs.apps.trading.dto.EODQuote;
+import ca.jrvs.apps.trading.dto.EODQuoteRequestDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -8,12 +8,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataRetrievalFailureException;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class MarketDataDao {
     @Value("${API_KEY}")
     private String apiKey;
@@ -32,7 +35,7 @@ public class MarketDataDao {
      * @throws IllegalArgumentException if a given ticker is invalid
      * @throws DataRetrievalFailureException if HTTP request failed
      */
-    public Optional<EODQuote> findById(String ticker) throws JsonProcessingException {
+    public Optional<EODQuoteRequestDTO> findById(String ticker) {
         if (ticker == null || ticker.trim().isEmpty()) {
 //            logger.error("Attempting to buy share with invalid symbol");
             throw new IllegalArgumentException("Invalid symbol provided.");
@@ -41,14 +44,18 @@ public class MarketDataDao {
         String url = "https://eodhd.com/api/real-time/" + ticker + ".US?api_token=" + apiKey + "&fmt=json";
         Optional<String> quote = executeHttpGet(url);
 
-        EODQuote eodQuote = new EODQuote();
-        eodQuote.setTicker(ticker);
-
+        EODQuoteRequestDTO eodQuoteRequestDTO = new EODQuoteRequestDTO();
         if (quote.isPresent()) {
-            JsonNode rootNode = objectMapper.readTree(quote.get());
-            eodQuote = objectMapper.treeToValue(rootNode, EODQuote.class);
+            try {
+                JsonNode rootNode = objectMapper.readTree(quote.get());
+                eodQuoteRequestDTO = objectMapper.treeToValue(rootNode, EODQuoteRequestDTO.class);
+                eodQuoteRequestDTO.setTicker(ticker);
+                eodQuoteRequestDTO.setAskSize(eodQuoteRequestDTO.getBidSize());
+                return Optional.of(eodQuoteRequestDTO);
 
-            return Optional.of(eodQuote);
+            } catch (Exception e){
+                throw new RuntimeException("Failed to parse data: " + e.getMessage());
+            }
         } else {
             throw new DataRetrievalFailureException("Failed to fetch data.");
         }
@@ -61,7 +68,7 @@ public class MarketDataDao {
      * @throws IllegalArgumentException if a given ticker is invalid
      * @throws DataRetrievalFailureException if HTTP request failed
      */
-    public List<EODQuote> findAllById(Iterable<String> tickers) throws JsonProcessingException {
+    public List<EODQuoteRequestDTO> findAllById(Iterable<String> tickers) throws JsonProcessingException {
         int i = 0;
         String initialTicker = null;
         StringBuilder tickerList = new StringBuilder();
@@ -83,7 +90,7 @@ public class MarketDataDao {
 
         if (quote.isPresent()) {
             JsonNode rootNode = objectMapper.readTree(quote.get());
-            List<EODQuote> quoteList = objectMapper.treeToValue(rootNode, new TypeReference<List<EODQuote>>(){});
+            List<EODQuoteRequestDTO> quoteList = objectMapper.treeToValue(rootNode, new TypeReference<List<EODQuoteRequestDTO>>(){});
 
             return quoteList;
         } else {
@@ -111,7 +118,7 @@ public class MarketDataDao {
                 throw new RuntimeException("Failed request.");
             }
         } catch (Exception e){
-            throw new DataRetrievalFailureException("Error when trying to fetch data", e);
+            throw new DataRetrievalFailureException("Error when trying to fetch data: " + e.getMessage());
         }
     }
 
