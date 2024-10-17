@@ -2,7 +2,6 @@ package ca.jrvs.apps.trading.service;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -17,7 +16,12 @@ import java.util.Set;
 @Service
 public class DailyListService {
     private Set<String> tickers;
-    private final String filePath = "src/main/java/ca/jrvs/apps/trading/files/tickerDailyList.txt";
+    private String filePath = "src/main/java/ca/jrvs/apps/trading/files/tickerDailyList.txt";
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
     @PostConstruct
     public void initialize() {
         tickers = new HashSet<>();
@@ -44,20 +48,20 @@ public class DailyListService {
         try {
             String result = String.join("\n", tickers);
             Files.write(Paths.get(filePath), result.getBytes());
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    public void addTicker(String ticker){
-        if (ticker == null || ticker.trim().isEmpty()){
+    public void addTicker(String ticker) {
+        if (ticker == null || ticker.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid ticker provided to add to list.");
         }
         tickers.add(ticker.toUpperCase());
     }
 
-    public Set<String> getList(){
-       return tickers;
+    public Set<String> getList() {
+        return tickers;
     }
 }

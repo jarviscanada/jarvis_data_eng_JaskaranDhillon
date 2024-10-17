@@ -14,10 +14,12 @@ import java.util.Set;
 public class QuoteController {
     private final QuoteService quoteService;
     private final DailyListService dailyListService;
-    public QuoteController(QuoteService quoteService, DailyListService dailyListService){
+
+    public QuoteController(QuoteService quoteService, DailyListService dailyListService) {
         this.quoteService = quoteService;
         this.dailyListService = dailyListService;
     }
+
     @GetMapping("/eod/ticker/{ticker}")
     public ResponseEntity<EODQuoteRequestDTO> getQuote(@PathVariable("ticker") String ticker) {
         EODQuoteRequestDTO quote = quoteService.findEODQuoteByTicker(ticker);

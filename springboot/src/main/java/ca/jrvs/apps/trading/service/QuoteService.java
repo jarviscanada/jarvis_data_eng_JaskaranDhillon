@@ -18,45 +18,50 @@ import java.util.Optional;
 
 @Service
 public class QuoteService {
-    MarketDataDao marketDataDao;
-    QuoteDao quoteDao;
+    private MarketDataDao marketDataDao;
+    private QuoteDao quoteDao;
 
     @Autowired
-    public QuoteService(MarketDataDao marketDataDao, QuoteDao quoteDao){
+    public QuoteService(MarketDataDao marketDataDao, QuoteDao quoteDao) {
         this.marketDataDao = marketDataDao;
         this.quoteDao = quoteDao;
     }
 
     /**
      * Find an EODQuote
+     *
      * @param ticker
      * @return EODQuote object
-     * @throws IllegalArgumentException if ticker is invalid
+     * @throws IllegalArgumentException  if ticker is invalid
      * @throws ResourceNotFoundException if data not found for given ticker
      */
-    public EODQuoteRequestDTO findEODQuoteByTicker(String ticker){
-        Optional<EODQuoteRequestDTO>  eodQuote = marketDataDao.findById(ticker);
+    public EODQuoteRequestDTO findEODQuoteByTicker(String ticker) {
+        Optional<EODQuoteRequestDTO> eodQuote = marketDataDao.findById(ticker);
         if (eodQuote.isEmpty()) {
             throw new ResourceNotFoundException("No quote found for given ticker.");
         }
-          return eodQuote.get();
+
+        Quote quote = QuoteUtils.buildQuoteFromEODQuote(eodQuote.get());
+        quoteDao.save(quote);
+
+        return eodQuote.get();
     }
 
     /**
      * Update quote table against EOD source
-     *
+     * <p>
      * - get all quotes from the db
      * - for each ticker get IexQuote
      * - convert IexQuote to Quote entity
      * - persist quote to db
      *
      * @throws ResourceNotFoundException if ticker is not found from EOD API
-     * @throws DataAccessException if unable to retrieve data
-     * @throws IllegalArgumentException for invalid input
+     * @throws DataAccessException       if unable to retrieve data
+     * @throws IllegalArgumentException  for invalid input
      */
     public void updateMarketData() {
         List<Quote> quotes = findAllQuotes();
-        if (quotes.isEmpty()){
+        if (quotes.isEmpty()) {
             throw new RuntimeException("No quotes found to update.");
         }
 
@@ -70,7 +75,7 @@ public class QuoteService {
 
     /**
      * Validate (against EOD) and save given tickers to quote table
-     *
+     * <p>
      * - get IexQuote(s)
      * - convert each IexQuote to Quote entity
      * - persist the quote to db

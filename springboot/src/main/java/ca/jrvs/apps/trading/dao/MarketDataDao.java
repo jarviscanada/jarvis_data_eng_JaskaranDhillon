@@ -32,7 +32,7 @@ public class MarketDataDao {
      * Get an IexQuote
      *
      * @param ticker
-     * @throws IllegalArgumentException if a given ticker is invalid
+     * @throws IllegalArgumentException      if a given ticker is invalid
      * @throws DataRetrievalFailureException if HTTP request failed
      */
     public Optional<EODQuoteRequestDTO> findById(String ticker) {
@@ -41,10 +41,11 @@ public class MarketDataDao {
             throw new IllegalArgumentException("Invalid symbol provided.");
         }
 
+        ticker = ticker.toUpperCase();
         String url = "https://eodhd.com/api/real-time/" + ticker + ".US?api_token=" + apiKey + "&fmt=json";
         Optional<String> quote = executeHttpGet(url);
 
-        EODQuoteRequestDTO eodQuoteRequestDTO = new EODQuoteRequestDTO();
+        EODQuoteRequestDTO eodQuoteRequestDTO;
         if (quote.isPresent()) {
             try {
                 JsonNode rootNode = objectMapper.readTree(quote.get());
@@ -53,7 +54,7 @@ public class MarketDataDao {
                 eodQuoteRequestDTO.setAskSize(eodQuoteRequestDTO.getBidSize());
                 return Optional.of(eodQuoteRequestDTO);
 
-            } catch (Exception e){
+            } catch (Exception e) {
                 throw new RuntimeException("Failed to parse data: " + e.getMessage());
             }
         } else {
@@ -63,9 +64,10 @@ public class MarketDataDao {
 
     /**
      * Get quotes from IEX
+     *
      * @param tickers is a list of tickers
      * @return a list of IexQuote objects
-     * @throws IllegalArgumentException if a given ticker is invalid
+     * @throws IllegalArgumentException      if a given ticker is invalid
      * @throws DataRetrievalFailureException if HTTP request failed
      */
     public List<EODQuoteRequestDTO> findAllById(Iterable<String> tickers) throws JsonProcessingException {
@@ -73,11 +75,11 @@ public class MarketDataDao {
         String initialTicker = null;
         StringBuilder tickerList = new StringBuilder();
 
-        for (String ticker : tickers){
+        for (String ticker : tickers) {
             if (ticker == null || ticker.trim().isEmpty()) {
 //            logger.error("Attempting to buy share with invalid symbol");
                 throw new IllegalArgumentException("Invalid symbol provided.");
-            } else if (i==0){
+            } else if (i == 0) {
                 initialTicker = ticker;
             } else {
                 tickerList.append(ticker).append(",");
@@ -85,12 +87,13 @@ public class MarketDataDao {
             i++;
         }
 
-        String url = "https://eodhd.com/api/real-time/" + initialTicker +"?s=" + tickerList + "&api_token=" + apiKey + "&fmt=json";
+        String url = "https://eodhd.com/api/real-time/" + initialTicker + "?s=" + tickerList + "&api_token=" + apiKey + "&fmt=json";
         Optional<String> quote = executeHttpGet(url);
 
         if (quote.isPresent()) {
             JsonNode rootNode = objectMapper.readTree(quote.get());
-            List<EODQuoteRequestDTO> quoteList = objectMapper.treeToValue(rootNode, new TypeReference<List<EODQuoteRequestDTO>>(){});
+            List<EODQuoteRequestDTO> quoteList = objectMapper.treeToValue(rootNode, new TypeReference<List<EODQuoteRequestDTO>>() {
+            });
 
             return quoteList;
         } else {
@@ -112,12 +115,12 @@ public class MarketDataDao {
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            if (response.isSuccessful() && response.body() != null){
+            if (response.isSuccessful() && response.body() != null) {
                 return Optional.of(response.body().string());
             } else {
                 throw new RuntimeException("Failed request.");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new DataRetrievalFailureException("Error when trying to fetch data: " + e.getMessage());
         }
     }

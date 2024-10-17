@@ -6,20 +6,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="quote")
+@Table(name = "quote")
 public class Quote {
     @Id
-    @Column(name="ticker")
+    @Column(name = "ticker")
     private String ticker;
-    @Column(name="last_price")
+    @Column(name = "last_price")
     private float lastPrice;
-    @Column(name="bid_size")
+    @Column(name = "bid_size")
     private int bidSize;
-    @Column(name="bid_price")
+    @Column(name = "bid_price")
     private float bidPrice;
-    @Column(name="ask_size")
+    @Column(name = "ask_size")
     private int askSize;
-    @Column(name="ask_price")
+    @Column(name = "ask_price")
     private float askPrice;
 
     public String getTicker() {
