@@ -1,8 +1,8 @@
 Table of contents
 * [Introduction](#Introduction)
-* [Quick Start](#Quick Start)
+* [Quick Start](#Quick-Start)
 * [Implementation](#Implementation)
-* [REST API Usage](#REST API Usage)
+* [REST API Usage](#REST-API-Usage)
 * [Test](#Test)
 * [Deployment](#Deployment)
 * [Improvements](#Improvements)
