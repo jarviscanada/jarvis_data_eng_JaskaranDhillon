@@ -20,12 +20,4 @@ public class QuoteUtils {
 
         return quote;
     }
-
-    /**
-     * Helper method to validate and save a single ticker
-     * Not to be confused with saveQuote(Quote quote)
-     */
-//    public Quote saveQuote(String ticker) {
-//        //TODO
-//    }
 }

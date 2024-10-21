@@ -37,7 +37,6 @@ public class MarketDataDao {
      */
     public Optional<EODQuoteRequestDTO> findById(String ticker) {
         if (ticker == null || ticker.trim().isEmpty()) {
-//            logger.error("Attempting to buy share with invalid symbol");
             throw new IllegalArgumentException("Invalid symbol provided.");
         }
 
@@ -124,8 +123,4 @@ public class MarketDataDao {
             throw new DataRetrievalFailureException("Error when trying to fetch data: " + e.getMessage());
         }
     }
-
-//    private String getDateThreeDaysAgo(){
-//        return LocalDate.now().minusDays(3).format(DateTimeFormatter.ISO_LOCAL_DATE);
-//    }
 }

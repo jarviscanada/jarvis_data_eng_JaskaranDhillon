@@ -12,7 +12,6 @@ import java.util.Optional;
 @Repository
 public interface PositionDao extends JpaRepository<Position, Long> {
     Optional<Position> findByTicker(String ticker);
-
     @Query("SELECT p FROM Position p WHERE p.accountId = :accountId")
     List<Position> findAllByAccountId(@Param("accountId") Integer accountId);
 }

@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AccountDao extends JpaRepository<Account, Integer> {
-
     Account getAccountByTraderId(Integer traderId);
 }
