@@ -1,0 +1,18 @@
+resources:
+  - psql-deployment.yaml
+  - trading-deployment.yaml
+  - psql-pvc.yaml
+  - psql-service.yaml
+  - trading-app-service.yaml
+
+secretGenerator:
+  - name: psql-secret
+    literals:
+      - POSTGRES_PASSWORD=Narutobestfan1!
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=jrvstrading
+  - name: trading-app-secret
+    literals:
+      - DB_PASSWORD=Narutobestfan1!
+      - DB_USERNAME=postgres
+      - API_KEY=66f0dbb66bda68.81298448
