@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: psql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce    # This means only one node can mount the volume at a time
+  resources:
+    requests:
+      storage: 5Gi      # Specify the storage size (adjust as per your needs)
+  storageClassName: standard  # Optional, use if your Kubernetes cluster has a custom storage class
