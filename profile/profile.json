@@ -46,7 +46,7 @@
       "name": "Core Java Apps"
     },
     {
-      "description": "A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker.",
+      "description": "A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker. This application provides a valuable platform for novice investors to begin trading stocks and learn more about the stock market.",
       "git_url": "/springboot",
       "name": "Springboot App"
     }
@@ -64,7 +64,7 @@
   "professional_experience": [
     {
       "company": "Canada Life",
-      "description": "Built new reference microservices using Spring Boot, MongoDB, Kafka, and wrote onboarding documentation to streamline the process for new developers, improving efficiency and accelerating team integration. \\ Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality with additional features using React and Flask.  Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience.  Developed Spring Boot APIs demonstrating Kafka error handling patterns to standardize designs across teams.\n",
+      "description": "Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \\ Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality with additional features using React and Flask.  Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience.  Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.\n",
       "duration": "May 2023 - August 2023",
       "title": "Software Engineer Intern"
     },
@@ -78,12 +78,12 @@
   "skills": {
     "competent": [
       "Linux",
-      "Spring Boot",
-      "JUnit/Mockito",
+      "JUnit",
+      "Mockito",
       "TypeScript",
       "Jest",
       "Git",
-      "Docker",
+      "Kubernetes",
       "PostgreSQL"
     ],
     "familiar": [
@@ -98,9 +98,11 @@
       "JavaScript",
       "HTML/CSS",
       "React",
+      "Spring Boot",
       "ExpressJS",
-      "Agile/Scrum"
+      "Agile/Scrum",
+      "Docker"
     ]
   },
-  "summary": "A recent Computer Engineering graduate from McMaster University with a  passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships.  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, TypeScript, ExpressJS, and PostgreSQL.  I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience.  Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.\"\n"
+  "summary": "A recent Computer Engineering graduate from McMaster University with a  passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships.  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, ExpressJS, and PostgreSQL.  I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience.  Being able to solve complex real-world problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.\n"
 }

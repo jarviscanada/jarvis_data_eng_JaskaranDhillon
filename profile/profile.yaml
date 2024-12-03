@@ -8,9 +8,9 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 summary: >
   A recent Computer Engineering graduate from McMaster University with a 
   passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships. 
-  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, TypeScript, ExpressJS, and PostgreSQL. 
+  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, ExpressJS, and PostgreSQL. 
   I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience. 
-  Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge."
+  Being able to solve complex real-world problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
 skills:
@@ -20,17 +20,19 @@ skills:
     - JavaScript
     - HTML/CSS
     - React
+    - Spring Boot
     - ExpressJS
     - Agile/Scrum
+    - Docker
   # At least 5 skills
   competent:
     - Linux
-    - Spring Boot
-    - JUnit/Mockito
+    - JUnit
+    - Mockito
     - TypeScript
     - Jest
     - Git
-    - Docker
+    - Kubernetes
     - PostgreSQL
   # At least 5 skills
   familiar:
@@ -55,7 +57,7 @@ jarvis_projects:
       - "Grep App: A Java implementation of the Linux grep command. It accepts a regex pattern, directory path, an out file path, and recursively searches through all files in the given directory to find all lines that match the given regex pattern. The lines are stored in the out file specified."
   - name: "Springboot App"
     git_url: "/springboot"
-    description: "A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker."
+    description: "A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker. This application provides a valuable platform for novice investors to begin trading stocks and learn more about the stock market."
 #  - name: "Python Data Analytics"
 #    git_url: "/python_data_anlytics"
 #    description: ""
@@ -107,11 +109,11 @@ professional_experience:
     company: "Canada Life"
     duration: "May 2023 - August 2023"
     description: > 
-      Built new reference microservices using Spring Boot, MongoDB, Kafka, and wrote onboarding documentation to streamline the process for new developers, improving efficiency and accelerating team integration. \
+      Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \
       Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality
       with additional features using React and Flask. 
       Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience. 
-      Developed Spring Boot APIs demonstrating Kafka error handling patterns to standardize designs across teams.
+      Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.
 
 
   - title: "Software Engineer Intern"

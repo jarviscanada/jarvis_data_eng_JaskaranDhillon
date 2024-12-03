@@ -1,13 +1,13 @@
 # Jaskaran Dhillon . Jarvis Consulting
 
-A recent Computer Engineering graduate from McMaster University with a  passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships.  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, TypeScript, ExpressJS, and PostgreSQL.  I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience.  Being able to solve real-world complex problems drives me to keep improving my craft in this industry, always seeking the next greater challenge."
+A recent Computer Engineering graduate from McMaster University with a  passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships.  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, ExpressJS, and PostgreSQL.  I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience.  Being able to solve complex real-world problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.
 
 
 ## Skills
 
-**Proficient:** Java, JavaScript, HTML/CSS, React, ExpressJS, Agile/Scrum
+**Proficient:** Java, JavaScript, HTML/CSS, React, Spring Boot, ExpressJS, Agile/Scrum, Docker
 
-**Competent:** Linux, Spring Boot, JUnit/Mockito, TypeScript, Jest, Git, Docker, PostgreSQL
+**Competent:** Linux, JUnit, Mockito, TypeScript, Jest, Git, Kubernetes, PostgreSQL
 
 **Familiar:** Figma, MongoDB, Python, Kafka, CI/CD
 
@@ -23,7 +23,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
   - JDBC App: A Java application that allows users to execute stock trades via the terminal, tracking both the latest stock information and purchases made by the user. The app fetches real-time stock data from the Alpha Vantage API and stores it in a Postgres database, allowing users to calculate profits and sell at a later date.
   - Grep App: A Java implementation of the Linux grep command. It accepts a regex pattern, directory path, an out file path, and recursively searches through all files in the given directory to find all lines that match the given regex pattern. The lines are stored in the out file specified.
 
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/springboot)]: A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker.
+**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon/tree/master/springboot)]: A trading platform that allows users to create traders, accounts, and execute security orders through the EODHD API. Built as a REST API using Spring Boot, PostgreSQL, and Docker. This application provides a valuable platform for novice investors to begin trading stocks and learn more about the stock market.
 
 
 ## Highlighted Projects
@@ -38,7 +38,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 
 ## Professional Experiences
 
-**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Built new reference microservices using Spring Boot, MongoDB, Kafka, and wrote onboarding documentation to streamline the process for new developers, improving efficiency and accelerating team integration. \ Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality with additional features using React and Flask.  Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience.  Developed Spring Boot APIs demonstrating Kafka error handling patterns to standardize designs across teams.
+**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \ Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality with additional features using React and Flask.  Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience.  Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.
 
 
 **Software Engineer Intern, Sera4 (May 2021 - August 2022)**: Developed Teleporte, a digital access control portal for smart locks, using React and TypeScript to implement major features and significantly enhance the user experience for 10,000+ enterprise users. Revamped internal tools for the support team by developing wizards to consolidate systems for managing customer organizations, assets, and licenses, streamlining processes and reducing task completion time by up to 30%. Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library. Designed and presented Figma UI mockups to stakeholders, ensuring design alignment and minimizing revisions. Extended existing RESTful API microservices with new features using Express.js and PostgreSQL.
