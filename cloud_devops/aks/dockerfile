@@ -1,0 +1,20 @@
+FROM jenkins/inbound-agent:4.3-9
+
+
+USER root
+
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
+RUN curl -LO "https://dl.k8s.io/release/v1.27.1/bin/linux/amd64/kubectl" && \
+    chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin/kubectl
+
+
+RUN apt-get update && apt-get install -y git
+
+
+RUN rm -rf /var/lib/apt/lists/* && rm -f ./kubectl
+
+USER jenkins
+
+RUN az --version && kubectl version --client && git --version

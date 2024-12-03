@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+    environment {
+        DOCKER_USERNAME = credentials('docker-username')
+        DOCKER_PASSWORD = credentials('docker-password') 
+        AZ_APP_ID = credentials('azure-client-id') 
+        AZ_SECRET = credentials('azure-client-secret') 
+        AZ_TENANT = credentials('azure-tenant-id')  
+        KUBECONFIG_STAGING = credentials('kubeconfig-staging') 
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'feature/spring_boot_quote', url: 'https://github.com/jarviscanada/jarvis_data_eng_JaskaranDhillon.git'
+            }
+        }
+        stage('Build and Push Docker Images') {
+            steps {
+                sh """
+                cd springboot
+
+                docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+                docker build -t jasdhillon152/trading-app:latest -f Dockerfile .
+
+                docker build -t jasdhillon152/trading-psql:latest -f psql/Dockerfile psql
+
+                docker push jasdhillon152/trading-app:latest
+                docker push jasdhillon152/trading-psql:latest
+                """
+            }
+        }
+        stage('Login to Azure') {
+            steps {
+                script {
+                    sh """
+                    az login --service-principal -u $AZ_APP_ID -p $AZ_SECRET --tenant $AZ_TENANT
+                    """
+                }
+            }
+        }
+        stage('Deploy to Staging AKS') {
+            steps {
+                withCredentials([file(credentialsId: 'kubeconfig-staging', variable: 'KUBECONFIG')]) {
+                    sh """
+                    az account set --subscription $AZ_SUB_ID  
+
+                    kubectl --kubeconfig=$KUBECONFIG_STAGING config use-context <staging-context>
+
+                    cd springboot  
+                    
+                    kubectl apply -k .
+                    """
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Deployment to Staging Successful!'
+        }
+        failure {
+            echo 'Deployment Failed.'
+        }
+    }
+}

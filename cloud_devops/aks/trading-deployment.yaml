@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trading-app
+  template:
+    metadata:
+      labels:
+        app: trading-app
+    spec:
+      containers:
+      - name: trading-app
+        image: acrjasdhillon152.azurecr.io/trading-app:latest 
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_CONTAINER
+          value: trading-psql-service
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: trading-app-secret
+              key: DB_PASSWORD
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: trading-app-secret
+              key: DB_USERNAME
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: trading-app-secret
+              key: API_KEY

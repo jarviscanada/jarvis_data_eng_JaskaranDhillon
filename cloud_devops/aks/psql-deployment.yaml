@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading-psql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trading-psql
+  template:
+    metadata:
+      labels:
+        app: trading-psql
+    spec:
+      containers:
+      - name: postgres
+        image: acrjasdhillon152.azurecr.io/trading-psql:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: PGDATA
+          value: /var/lib/postgresql/data/db
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: psql-secret
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: psql-secret
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: psql-secret
+              key: POSTGRES_DB
+        volumeMounts:
+        - name: psql-storage
+          mountPath: /var/lib/postgresql/data/db
+      volumes:
+      - name: psql-storage
+        persistentVolumeClaim:
+          claimName: psql-pvc
