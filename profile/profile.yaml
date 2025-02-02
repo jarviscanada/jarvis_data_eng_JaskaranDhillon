@@ -16,24 +16,23 @@ summary: >
 skills:
   # At least 5 skills
   proficient:
-    - Java
-    - JavaScript
     - HTML/CSS
+    - JavaScript
     - React
+    - Java
     - Spring Boot
     - ExpressJS
-    - Agile/Scrum
     - Docker
+    - PostgreSQL
   # At least 5 skills
   competent:
-    - Linux
+    - TypeScript
     - JUnit
     - Mockito
-    - TypeScript
     - Jest
+    - Linux
     - Git
     - Kubernetes
-    - PostgreSQL
   # At least 5 skills
   familiar:
     - Figma
@@ -41,7 +40,6 @@ skills:
     - Python
     - Kafka
     - CI/CD
-
 
 # List of Jarvis projects
 jarvis_projects:
@@ -110,9 +108,8 @@ professional_experience:
     duration: "May 2023 - August 2023"
     description: > 
       Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \
-      Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality
-      with additional features using React and Flask. 
-      Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience. 
+      Integrated the Azure Search OpenAI application for internal use by policy underwriters and business analysts, enhancing functionality with additional capabilities using React and Flask. 
+      Collaborated with other interns on a major overhaul of outdated developer documentation in Confluence, addressing gaps and consolidating resources to improve the developer experience. 
       Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.
 
 
@@ -120,7 +117,7 @@ professional_experience:
     company: "Sera4"
     duration: "May 2021 - August 2022"
     description: >
-      Developed Teleporte, a digital access control portal for smart locks, using React and TypeScript to implement
+      Developed Teleporte, a digital access control portal for smart locks, using React to implement
       major features and significantly enhance the user experience for 10,000+ enterprise users.
       Revamped internal tools for the support team by developing wizards to consolidate systems for managing customer
       organizations, assets, and licenses, streamlining processes and reducing task completion time by up to 30%.

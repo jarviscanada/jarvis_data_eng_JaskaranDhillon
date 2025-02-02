@@ -5,9 +5,9 @@ A recent Computer Engineering graduate from McMaster University with a  passion 
 
 ## Skills
 
-**Proficient:** Java, JavaScript, HTML/CSS, React, Spring Boot, ExpressJS, Agile/Scrum, Docker
+**Proficient:** HTML/CSS, JavaScript, React, Java, Spring Boot, ExpressJS, Docker, PostgreSQL
 
-**Competent:** Linux, JUnit, Mockito, TypeScript, Jest, Git, Kubernetes, PostgreSQL
+**Competent:** TypeScript, JUnit, Mockito, Jest, Linux, Git, Kubernetes
 
 **Familiar:** Figma, MongoDB, Python, Kafka, CI/CD
 
@@ -38,10 +38,10 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JaskaranDh
 
 ## Professional Experiences
 
-**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \ Integrated the Azure Search OpenAI application with Canada Life for internal use and improved functionality with additional features using React and Flask.  Revamped outdated developer documentation, identifying gaps and consolidating resources to enhance the developer experience.  Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.
+**Software Engineer Intern, Canada Life (May 2023 - August 2023)**: Built microservices using Spring Boot, MongoDB, and Kafka to facilitate a policy payment service, providing a reference implementation to showcase best practices and streamline the developer onboarding process. \ Integrated the Azure Search OpenAI application for internal use by policy underwriters and business analysts, enhancing functionality with additional capabilities using React and Flask.  Collaborated with other interns on a major overhaul of outdated developer documentation in Confluence, addressing gaps and consolidating resources to improve the developer experience.  Created Spring Boot APIs showcasing various Kafka error handling patterns to standardize designs across teams.
 
 
-**Software Engineer Intern, Sera4 (May 2021 - August 2022)**: Developed Teleporte, a digital access control portal for smart locks, using React and TypeScript to implement major features and significantly enhance the user experience for 10,000+ enterprise users. Revamped internal tools for the support team by developing wizards to consolidate systems for managing customer organizations, assets, and licenses, streamlining processes and reducing task completion time by up to 30%. Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library. Designed and presented Figma UI mockups to stakeholders, ensuring design alignment and minimizing revisions. Extended existing RESTful API microservices with new features using Express.js and PostgreSQL.
+**Software Engineer Intern, Sera4 (May 2021 - August 2022)**: Developed Teleporte, a digital access control portal for smart locks, using React to implement major features and significantly enhance the user experience for 10,000+ enterprise users. Revamped internal tools for the support team by developing wizards to consolidate systems for managing customer organizations, assets, and licenses, streamlining processes and reducing task completion time by up to 30%. Wrote automated unit and integration tests for components with 90%+ code coverage using Jest and React Testing Library. Designed and presented Figma UI mockups to stakeholders, ensuring design alignment and minimizing revisions. Extended existing RESTful API microservices with new features using Express.js and PostgreSQL.
 
 
 
