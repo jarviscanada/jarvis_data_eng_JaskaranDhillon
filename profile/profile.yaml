@@ -22,8 +22,8 @@ skills:
     - Java
     - Spring Boot
     - ExpressJS
-    - Docker
     - PostgreSQL
+    - Docker
   # At least 5 skills
   competent:
     - TypeScript
@@ -33,6 +33,7 @@ skills:
     - Linux
     - Git
     - Kubernetes
+    - Redis
   # At least 5 skills
   familiar:
     - Figma

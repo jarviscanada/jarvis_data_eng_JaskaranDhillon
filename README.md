@@ -5,9 +5,9 @@ A recent Computer Engineering graduate from McMaster University with a  passion 
 
 ## Skills
 
-**Proficient:** HTML/CSS, JavaScript, React, Java, Spring Boot, ExpressJS, Docker, PostgreSQL
+**Proficient:** HTML/CSS, JavaScript, React, Java, Spring Boot, ExpressJS, PostgreSQL, Docker
 
-**Competent:** TypeScript, JUnit, Mockito, Jest, Linux, Git, Kubernetes
+**Competent:** TypeScript, JUnit, Mockito, Jest, Linux, Git, Kubernetes, Redis
 
 **Familiar:** Figma, MongoDB, Python, Kafka, CI/CD
 

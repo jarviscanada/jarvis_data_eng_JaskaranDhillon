@@ -83,7 +83,8 @@
       "Jest",
       "Linux",
       "Git",
-      "Kubernetes"
+      "Kubernetes",
+      "Redis"
     ],
     "familiar": [
       "Figma",
@@ -99,8 +100,8 @@
       "Java",
       "Spring Boot",
       "ExpressJS",
-      "Docker",
-      "PostgreSQL"
+      "PostgreSQL",
+      "Docker"
     ]
   },
   "summary": "A recent Computer Engineering graduate from McMaster University with a  passion for software development. Experienced in full-stack development, having worked for 1.7 years in internships.  I have worked on high-impact projects such as architecting and developing a digital access control portal for Sera4 to help organizations manage their employees and access to their assets, using technologies such as React, ExpressJS, and PostgreSQL.  I have also worked as part of the Enterprise Architecture team at Canada Life to develop POC applications to serve as reference implementations and enhance the developer experience.  Being able to solve complex real-world problems drives me to keep improving my craft in this industry, always seeking the next greater challenge.\n"
